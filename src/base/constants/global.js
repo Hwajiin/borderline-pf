@@ -10,6 +10,7 @@ const global = {
           white-space: nowrap !important;
           border: 0 !important;
       `,
+  navHeight: 70,
 };
 
 export default global;
