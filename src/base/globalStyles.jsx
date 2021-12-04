@@ -9,18 +9,19 @@ const GlobalStyles = createGlobalStyle`
     /* Additional Customizing reset CSS */
     * {
         margin: 0;
-        font-family: ${fonts.family};
+        font-family: ${fonts.family.en.base};
         box-sizing: border-box;
     }
 
     html {
-        font-family: ${fonts.family};
+        font-family: ${fonts.family.en.base};
         font-size: 16px;
     }
 
     body {
-        font-family: ${fonts.family};
+        font-family: ${fonts.family.en.base};
         color: ${colors.variable.black};
+        background-color: ${colors.variable.ivory};
     }
 
     h1 {
