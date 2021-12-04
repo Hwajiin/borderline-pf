@@ -1,6 +1,13 @@
 const fonts = {
   family: {
-    base: `'Nanum Gothic', sans-serif`,
+    kr: {
+      base: `'Nanum Gothic', sans-serif`,
+      point: `'Nanum Myeongjo', serif`,
+    },
+    en: {
+      base: `'Open Sans', sans-serif`,
+      point: `'Playfair Display', serif`,
+    },
   },
 
   size: {
