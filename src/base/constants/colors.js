@@ -10,13 +10,13 @@ const colors = {
     "gray-dark": "#babdbe",
 
     // Point color
-    red: "#ff1744",
-    "red-light": "#ff616f",
-    "red-dark": "#c4001d",
+    pink: "#f29090",
+    green: "#55b47d",
 
     // Base color
+    ivory: "#f9f4e6",
     white: "#ffffff",
-    black: "000",
+    black: "#000",
   },
 };
 
