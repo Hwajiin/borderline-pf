@@ -20,9 +20,9 @@ const flexbox = (
 ) => {
   return `
         display: flex;
-        flex-direction: ${direction};
-        justify-contents: ${justify};
+        justify-content: ${justify};
         align-items: ${align};
+        flex-direction: ${direction};
     `;
 };
 
