@@ -7,18 +7,18 @@ const useNav = () => {
   useEffect(() => {
     window.addEventListener("resize", () => {
       setWidth(window.innerWidth);
-      if (open == true) {
+      if (open === true) {
         setOpen(false);
       }
     });
 
     return window.removeEventListener("resize", () => {
       setWidth(window.innerWidth);
-      if (open == true) {
+      if (open === true) {
         setOpen(false);
       }
     });
-  }, []);
+  }, [open]);
 
   return { width, open, setOpen };
 };
