@@ -13,8 +13,8 @@ const fonts = {
   size: {
     sm: "12px",
     md: "14px",
-    lg: "18px",
-    xl: "24px",
+    lg: "24px",
+    xl: "36px",
   },
 
   weight: {
