@@ -7,7 +7,7 @@ import typography from "../base/mixins/typography";
 
 type SizeName = "sm" | "md" | "lg" | "xl";
 
-interface TitleBoxProps {
+export interface TitleBoxProps {
   title: string;
   subtitle?: string;
   titleSize?: SizeName;
