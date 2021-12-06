@@ -17,7 +17,7 @@ const contactInfo = {
     summary: "토이 프로젝트 제작 과정을 기록하고 있습니다.",
   },
   resume: {
-    path: "https://www.notion.so/GO-3761c24a3e824deeb77b05f7567de108",
+    path: "https://glimmer-pencil-ab4.notion.site/GO-3761c24a3e824deeb77b05f7567de108",
     summary: "Notion을 통해, 이력서를 정리하였습니다.",
   },
 };
