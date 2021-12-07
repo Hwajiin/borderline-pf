@@ -36,7 +36,7 @@ const Item = styled.li`
 const NavList: React.FC<NavListProps> = ({ kind = "nav" }) => {
   return (
     <List kind={kind}>
-      {category.map((item, index) => (
+      {category.base.map((item, index) => (
         <Item key={index}>
           <CustomLink to={item.path}>{item.title}</CustomLink>
         </Item>
