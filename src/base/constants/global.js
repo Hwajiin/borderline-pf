@@ -11,6 +11,7 @@ const global = {
           border: 0 !important;
       `,
   navHeight: 70,
+  headerHeight: 65,
 };
 
 export default global;
