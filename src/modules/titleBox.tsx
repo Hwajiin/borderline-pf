@@ -12,15 +12,21 @@ export interface TitleBoxProps {
   subtitle?: string;
   titleSize?: SizeName;
   subtitleSize?: SizeName;
+  center?: boolean;
 }
 
-type TitleBoxStyleProps = Pick<TitleBoxProps, "titleSize" | "subtitleSize">;
+type TitleBoxStyleProps = Pick<
+  TitleBoxProps,
+  "titleSize" | "subtitleSize" | "center"
+>;
 
-const Box = styled.div`
-  ${flexbox("center", "center", "column")}
-
-  ${responsive.device["above-tablet"]} {
-  }
+const Box = styled.div<TitleBoxStyleProps>`
+  ${({ center }) =>
+    center
+      ? `
+${flexbox("center", "center", "column")}
+`
+      : `${flexbox("flex-start", "flex-start", "column")}`}
 `;
 
 const Title = styled.h1<TitleBoxStyleProps>`
@@ -40,9 +46,10 @@ const TitleBox: React.FC<TitleBoxProps> = ({
   subtitle,
   titleSize = "lg",
   subtitleSize = "sm",
+  center = true,
 }) => {
   return (
-    <Box>
+    <Box center={center}>
       <Title titleSize={titleSize}>{title}</Title>
       <Subtitle subtitleSize={subtitleSize}>{subtitle}</Subtitle>
     </Box>
