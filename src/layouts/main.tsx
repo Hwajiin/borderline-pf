@@ -5,12 +5,14 @@ import fonts from "../base/constants/fonts";
 import global from "../base/constants/global";
 import responsive from "../base/constants/responsive";
 import whitespace from "../base/constants/whitespace";
+import flexbox from "../base/mixins/flexbox";
 import Col from "./grids/col";
 import Container from "./grids/container";
 import Row from "./grids/row";
 
 interface MainProps {
   title?: string;
+  isHeader?: boolean;
 }
 
 const SMain = styled.main`
@@ -19,7 +21,11 @@ const SMain = styled.main`
 `;
 
 const Header = styled.header`
-  padding: ${whitespace.base.padding.sm}px;
+  ${flexbox()}
+  top: ${global.navHeight}px;
+  height: ${global.headerHeight}px;
+  padding: 0 ${whitespace.base.padding.sm}px;
+  background-color: ${colors.variable.white};
   border-bottom: 1px solid ${colors.variable.black};
 
   ${responsive.device["above-tablet"]} {
@@ -32,18 +38,20 @@ const Title = styled.h1`
   text-transform: capitalize;
 `;
 
-const Main: React.FC<MainProps> = ({ title, children }) => {
+const Main: React.FC<MainProps> = ({ title, isHeader = true, children }) => {
   return (
     <SMain>
-      <Header>
-        <Container>
-          <Row>
-            <Col sm={4}>
-              <Title>{title}</Title>
-            </Col>
-          </Row>
-        </Container>
-      </Header>
+      {isHeader && (
+        <Header>
+          <Container>
+            <Row>
+              <Col sm={4}>
+                <Title>{title}</Title>
+              </Col>
+            </Row>
+          </Container>
+        </Header>
+      )}
       {children}
     </SMain>
   );
