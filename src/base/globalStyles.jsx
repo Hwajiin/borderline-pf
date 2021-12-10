@@ -21,7 +21,7 @@ const GlobalStyles = createGlobalStyle`
     body {
         font-family: ${fonts.family.en.base};
         color: ${colors.variable.black};
-        background-color: ${colors.variable.ivory};
+        background-color: ${colors.variable.white};
     }
 
     h1 {
