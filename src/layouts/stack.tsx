@@ -6,7 +6,7 @@ import responsive from "../base/constants/responsive";
 import Hopscotch from "../base/func/hopscotch";
 import ContentsBox from "../components/contentsBox";
 import StackItem from "../components/stackItem";
-import projectInfo from "../data/projects";
+import category from "../data/category";
 
 interface StackListProps {
   size: number;
@@ -41,7 +41,7 @@ const StackList = styled.ul<StackListProps>`
 `;
 
 const Stack: React.FC = () => {
-  const PROJECT_LENGTH = projectInfo.projects.length;
+  const PROJECT_LENGTH = category.projects.length;
   const CONTENTSBOX_SIZE = 60;
   const STACKLIST_SIZE = 100 - CONTENTSBOX_SIZE;
 
@@ -51,11 +51,11 @@ const Stack: React.FC = () => {
     <StackContainer>
       <ContentsBox size={CONTENTSBOX_SIZE} />
       <StackList size={STACKLIST_SIZE}>
-        {projectInfo.projects.map((item, index) => (
+        {category.projects.map((item, index) => (
           <StackItem
             key={index}
             size={hopscotch.getPortion(index)}
-            to={`/projects${item.route}`}
+            to={item.path}
             title={item.title}
           ></StackItem>
         ))}
