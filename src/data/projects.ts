@@ -1,8 +1,21 @@
+export type ProjectType = {
+  route: string;
+  title: string;
+  subtitle: string;
+  description: string;
+  stack: string[];
+  thumbnail: string;
+  img: string[];
+  deployment: string;
+  github: string;
+  velog: string;
+};
+
 const projectInfo = {
   title: "",
   subtitle: "",
-  projects: [
-    {
+  projects: {
+    "my-portfolio": {
       route: "/my-portfolio",
       title: "My Portfolio",
       subtitle: "",
@@ -14,7 +27,7 @@ const projectInfo = {
       github: "",
       velog: "",
     },
-    {
+    "covid19-info": {
       route: "/covid19-info",
       title: "Covid19 info page",
       subtitle: "",
@@ -26,7 +39,7 @@ const projectInfo = {
       github: "",
       velog: "",
     },
-    {
+    "mountain-landing": {
       route: "/mountain-landing",
       title: "Mountain Landing Page",
       subtitle: "",
@@ -38,7 +51,7 @@ const projectInfo = {
       github: "",
       velog: "",
     },
-  ],
+  },
 };
 
 export default projectInfo;
