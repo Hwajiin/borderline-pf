@@ -49,7 +49,7 @@ const Stack: React.FC = () => {
 
   return (
     <StackContainer>
-      <ContentsBox size={CONTENTSBOX_SIZE} />
+      <ContentsBox size={CONTENTSBOX_SIZE} projects={category.projects} />
       <StackList size={STACKLIST_SIZE}>
         {category.projects.map((item, index) => (
           <StackItem
