@@ -8,7 +8,7 @@ import typography from "../base/mixins/typography";
 type SizeName = "sm" | "md" | "lg" | "xl";
 
 export interface TitleBoxProps {
-  title: string;
+  title?: string;
   subtitle?: string;
   titleSize?: SizeName;
   subtitleSize?: SizeName;
@@ -42,7 +42,7 @@ const Subtitle = styled.p<TitleBoxStyleProps>`
 `;
 
 const TitleBox: React.FC<TitleBoxProps> = ({
-  title,
+  title = "",
   subtitle,
   titleSize = "lg",
   subtitleSize = "sm",
