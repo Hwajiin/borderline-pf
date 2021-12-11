@@ -12,7 +12,6 @@ const SOverlay = styled.div`
   height: 0;
   width: 100vw;
   height: 100vh;
-  overscroll-behavior: none;
   background-color: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(1px);
   z-index: ${zIndex.overlay};
