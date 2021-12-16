@@ -39,7 +39,7 @@ const SContentsBox = styled.section<ContentsBoxProps>`
   }
 `;
 
-const Header = styled.header`
+const Header = styled.div`
   width: 100%;
   padding: ${whitespace.base.padding.sm}px 0;
   margin-bottom: 50px;
@@ -95,7 +95,9 @@ const ContentsBox: React.FC<ContentsBoxProps> = ({ size, projects }) => {
       <List>
         {projects.map((project, index) => (
           <Item key={index}>
-            <Number>{index + 1 < 10 ? `0${index + 1}` : index + 1}</Number>
+            <Number aria-hidden>
+              {index + 1 < 10 ? `0${index + 1}` : index + 1}
+            </Number>
             <div>
               <ItemTitle>{project.title}</ItemTitle>
               <Description>{project.summary}</Description>
