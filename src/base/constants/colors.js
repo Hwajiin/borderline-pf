@@ -1,22 +1,17 @@
 const colors = {
   variable: {
     // Primary color
-    blue: "#2962ff",
-    "blue-light": "#768fff",
-    "blue-dark": "#0039cb",
+    pink: "#FDB0B0",
+    green: "#58B071",
 
     // Secondary color
     gray: "#eceff1",
     "gray-dark": "#babdbe",
 
-    // Point color
-    pink: "#f29090",
-    green: "#55b47d",
-
     // Base color
     ivory: "#f9f4e6",
     white: "#ffffff",
-    black: "#000",
+    black: "#353535",
   },
 };
 
