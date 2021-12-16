@@ -29,7 +29,7 @@ ${flexbox("center", "center", "column")}
       : `${flexbox("flex-start", "flex-start", "column")}`}
 `;
 
-const Title = styled.h1<TitleBoxStyleProps>`
+const Title = styled.h2<TitleBoxStyleProps>`
   font-family: ${fonts.family.en.point};
   text-transform: capitalize;
   ${({ titleSize }) => typography(titleSize)}
