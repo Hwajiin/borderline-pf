@@ -9,7 +9,7 @@ const skillsInfo = {
   stack: [
     {
       name: "base",
-      lang: "HTML/CSS/JavaScript",
+      lang: "HTML / CSS / JavaScript",
       img: htmlCssJs,
     },
     {
