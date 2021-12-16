@@ -3,18 +3,18 @@ import { Link, LinkProps, useResolvedPath, useMatch } from "react-router-dom";
 import styled from "styled-components";
 import colors from "../base/constants/colors";
 import Interactive from "../base/mixins/interactive";
-import typography from "../base/mixins/typography";
 
 interface CustomLinkProps extends LinkProps {
-  current: string;
+  current: "active" | "";
 }
 
 const SLink = styled(Link)<CustomLinkProps>`
   display: inline-block;
   text-transform: capitalize;
   padding: 10px 0;
-  ${typography()}
+  font-size: 16px;
   ${Interactive.transition()}
+  ${({ current }) => current === "active" && `text-decoration: underline;`}
 
   &:hover,
   &:active {
