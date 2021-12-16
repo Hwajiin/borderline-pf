@@ -16,11 +16,13 @@ const SButton = styled.button`
   padding: 5px;
   border-radius: 30px;
   background-color: ${colors.variable.black};
-  color: ${colors.variable.ivory};
+  color: ${colors.variable.white};
+
   ${Interactive.transition("all")}
 
   &:active,
   &:hover {
+    color: black;
     background-color: ${colors.variable.green};
   }
 `;

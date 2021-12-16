@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import colors from "../base/constants/colors";
-import flexbox from "../base/mixins/flexbox";
 import Interactive from "../base/mixins/interactive";
 
 interface ALinkProps {
@@ -10,17 +9,19 @@ interface ALinkProps {
 }
 
 const A = styled.a`
-  ${flexbox()}
   min-width: 100px;
   height: 40px;
-  padding: 5px;
+  text-align: center;
+  line-height: 30px;
+  padding: 5px 10px;
   border-radius: 30px;
   background-color: ${colors.variable.black};
-  color: ${colors.variable.ivory};
+  color: ${colors.variable.white};
   ${Interactive.transition("all")}
 
   &:active,
   &:hover {
+    color: black;
     background-color: ${colors.variable.green};
   }
 `;
