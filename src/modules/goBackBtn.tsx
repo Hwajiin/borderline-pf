@@ -3,10 +3,9 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronLeft } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router";
-import whitespace from "../base/constants/whitespace";
 
 const Button = styled.button`
-  padding: ${whitespace.base.padding.sm}px;
+  padding: 20px;
 
   &:active,
   &:hover {
