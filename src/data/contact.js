@@ -18,7 +18,7 @@ const contactInfo = {
   },
   resume: {
     path: "https://glimmer-pencil-ab4.notion.site/GO-3761c24a3e824deeb77b05f7567de108",
-    summary: "Notion을 통해, 이력서를 정리하였습니다.",
+    summary: "Notion을 통해, 이력서를 관리하고 있습니다.",
   },
 };
 
