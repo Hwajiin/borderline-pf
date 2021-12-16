@@ -6,7 +6,7 @@ const colors = {
 
     // Secondary color
     gray: "#eceff1",
-    "gray-dark": "#babdbe",
+    "gray-dark": "#6f6f6f",
 
     // Base color
     ivory: "#f9f4e6",
