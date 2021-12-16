@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import colors from "../../base/constants/colors";
 import gridArea from "../../base/constants/grid-area";
-import whitespace from "../../base/constants/whitespace";
 import flexbox from "../../base/mixins/flexbox";
 import Interactive from "../../base/mixins/interactive";
 import contactInfo from "../../data/contact";
