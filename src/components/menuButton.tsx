@@ -53,11 +53,7 @@ const Hamburger = styled.div<MenuButtonProps>`
 
 const MenuButton: React.FC<MenuButtonProps> = ({ toggleHandler, open }) => {
   return (
-    <Button
-      type="button"
-      aria-label="menu toggle button"
-      onClick={toggleHandler}
-    >
+    <Button type="button" aria-label="Open the menu" onClick={toggleHandler}>
       <Hamburger open={open} aria-hidden />
     </Button>
   );
