@@ -6,7 +6,6 @@ import fonts from "../base/constants/fonts";
 import responsive from "../base/constants/responsive";
 import whitespace from "../base/constants/whitespace";
 import flexbox from "../base/mixins/flexbox";
-import Interactive from "../base/mixins/interactive";
 
 interface StackItemProps {
   size: number;
