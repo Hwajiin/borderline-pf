@@ -1,4 +1,5 @@
 import { MouseEventHandler } from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 import colors from "../base/constants/colors";
 import global from "../base/constants/global";
@@ -34,6 +35,14 @@ const NavWrapper = styled.div`
   }
 `;
 
+const Logo = styled.h1`
+  font-size: 18px;
+`;
+
+const SLink = styled(Link)`
+  padding: 10px 0;
+`;
+
 const Navbar = () => {
   const { width, open, setOpen } = useNav();
 
@@ -48,7 +57,12 @@ const Navbar = () => {
           <Row>
             <Col sm={4}>
               <NavWrapper>
-                <div>borderline0px</div>
+                <Logo>
+                  <SLink to="/" aria-label="go to home">
+                    borderline0px
+                  </SLink>
+                </Logo>
+
                 {width < breakpoint.md ? (
                   <MenuButton toggleHandler={menuToggleHandler} open={open} />
                 ) : (
@@ -59,11 +73,13 @@ const Navbar = () => {
           </Row>
         </Container>
       </Nav>
+
       {open && (
         <OverlayPortal>
           <Overlay toggleHandler={menuToggleHandler} />
         </OverlayPortal>
       )}
+
       <Menubar open={open} />
     </>
   );
