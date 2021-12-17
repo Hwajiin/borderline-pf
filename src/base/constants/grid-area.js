@@ -3,17 +3,17 @@ const gridArea = {
     areaName: [],
   },
   skills: {
-    areaName: ["html/css/js", "react", "sass", "typescript", "studying"],
+    areaName: ["html/css/js", "react", "sass", "typescript"],
     sm: {
       columns: `1fr`,
-      template: `"base" "react" "sass" "typescript" "studying"`,
+      template: `"base" "react" "sass" "typescript"`,
     },
     lg: {
-      columns: `repeat(5, 1fr)`,
+      columns: `repeat(4, 1fr)`,
       template: `
-        "base react sass typescript studying"
-        "base react sass typescript studying"
-        "base react sass typescript studying"
+        "base react sass typescript"
+        "base react sass typescript"
+        "base react sass typescript"
       `,
     },
   },

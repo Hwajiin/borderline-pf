@@ -27,11 +27,6 @@ const skillsInfo = {
       lang: "TypeScript",
       img: typescript,
     },
-    {
-      name: "studying",
-      lang: "",
-      img: null,
-    },
   ],
 };
 
