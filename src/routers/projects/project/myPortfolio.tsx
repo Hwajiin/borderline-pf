@@ -1,13 +1,14 @@
 import React from "react";
 import { Helmet } from "react-helmet";
 import helmetInfo from "../../../data/helmet";
+import projectInfo from "../../../data/projects";
 import Main from "../../../layouts/main";
-import Stack from "../../../layouts/stack";
+import ProjectPage from "../../../layouts/projectPage";
 
-const Contents = () => {
+const MyPortfolio = () => {
   const {
     projects: {
-      contents: { title, desc, keywords, ogTitle, ogDescription, ogImage },
+      myPortolio: { title, desc, keywords, ogTitle, ogDescription, ogImage },
     },
   } = helmetInfo;
 
@@ -25,11 +26,13 @@ const Contents = () => {
         ]}
       />
 
-      <Main title="Projects">
-        <Stack></Stack>
+      <Main isHeader={false}>
+        <ProjectPage
+          projectData={projectInfo.projects["my-portfolio"]}
+        ></ProjectPage>
       </Main>
     </>
   );
 };
 
-export default Contents;
+export default MyPortfolio;

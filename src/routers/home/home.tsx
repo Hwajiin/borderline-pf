@@ -1,14 +1,11 @@
 import React from "react";
+import Main from "../../layouts/main";
 import { Helmet } from "react-helmet";
-import helmetInfo from "../../../data/helmet";
-import Main from "../../../layouts/main";
-import Stack from "../../../layouts/stack";
+import helmetInfo from "../../data/helmet";
 
-const Contents = () => {
+const Home = () => {
   const {
-    projects: {
-      contents: { title, desc, keywords, ogTitle, ogDescription, ogImage },
-    },
+    home: { title, desc, keywords, ogTitle, ogDescription, ogImage },
   } = helmetInfo;
 
   return (
@@ -25,11 +22,11 @@ const Contents = () => {
         ]}
       />
 
-      <Main title="Projects">
-        <Stack></Stack>
+      <Main isHeader={false}>
+        <h1>Home</h1>
       </Main>
     </>
   );
 };
 
-export default Contents;
+export default Home;
