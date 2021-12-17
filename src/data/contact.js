@@ -14,7 +14,7 @@ const contactInfo = {
 
   velog: {
     path: "https://velog.io/@borderline0px",
-    summary: "토이 프로젝트 제작 과정을 기록하고 있습니다.",
+    summary: "프로젝트 제작 과정을 기록하고 있습니다.",
   },
   resume: {
     path: "https://glimmer-pencil-ab4.notion.site/GO-3761c24a3e824deeb77b05f7567de108",
