@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import colors from "../../base/constants/colors";
 import responsive from "../../base/constants/responsive";
-import whitespace from "../../base/constants/whitespace";
 import flexbox from "../../base/mixins/flexbox";
 
 interface GridAreaProps {
