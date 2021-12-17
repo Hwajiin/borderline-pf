@@ -20,11 +20,11 @@ const Background = styled.div`
 `;
 
 const Circle = styled.div`
-  width: 60px;
-  height: 60px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  border: 8px solid ${colors.variable["gray-dark"]};
-  border-top: 8px solid ${colors.variable.pink};
+  border: 8px solid ${colors.variable.pink};
+  border-top: 8px solid ${colors.variable.white};
   animation: ${spin} 1s infinite linear;
 `;
 
