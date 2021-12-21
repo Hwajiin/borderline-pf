@@ -5,7 +5,6 @@ import global from "../base/constants/global";
 import responsive from "../base/constants/responsive";
 import whitespace from "../base/constants/whitespace";
 import zIndex from "../base/constants/z-index";
-import Interactive from "../base/mixins/interactive";
 import NavList from "../components/navList";
 
 interface MenubarProps {
@@ -21,7 +20,7 @@ const Wrapper = styled.div<MenubarProps>`
   height: 100vh;
   padding: ${global.navHeight + whitespace.base.padding.sm}px
     ${whitespace.base.padding.sm}px;
-  background-color: ${colors.variable.green};
+  background-color: ${colors.variable.ivory};
   border-left: 1px solid ${colors.variable.black};
   z-index: ${zIndex.menubar};
   transition: transform 300ms ease-in;

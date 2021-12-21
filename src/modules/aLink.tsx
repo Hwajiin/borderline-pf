@@ -21,7 +21,6 @@ const A = styled.a`
 
   &:active,
   &:hover {
-    color: black;
     background-color: ${colors.variable.green};
   }
 `;

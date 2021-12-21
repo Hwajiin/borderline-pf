@@ -19,7 +19,7 @@ import Overlay from "./overlay";
 const Nav = styled.nav`
   position: fixed;
   width: 100%;
-  background-color: ${colors.variable.pink};
+  background-color: ${colors.variable.white};
   border-bottom: solid 1px ${colors.variable.black};
   z-index: ${zIndex.navbar};
 `;

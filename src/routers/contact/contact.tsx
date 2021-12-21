@@ -17,10 +17,15 @@ const LinkWrapper = styled.a`
   width: 100%;
   height: 100%;
   ${flexbox()}
-  ${Interactive.transition("background-color")}
+  ${Interactive.transition("all")}
 
   &:active,
   &:hover {
+    h2,
+    p {
+      color: ${colors.variable.white};
+    }
+
     background-color: ${colors.variable.green};
   }
 `;
