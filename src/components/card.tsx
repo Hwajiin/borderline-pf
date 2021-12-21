@@ -30,15 +30,15 @@ const Img = styled.img`
 const Detail = styled.div`
   width: 100%;
   height: 20%;
-  ${flexbox()}
 `;
 
 const Data = styled.p`
-  width: 100%;
   ${flexbox("flex-end")}
-  font-size: ${fonts.size.sm};
+  width: 100%;
+  height: 100%;
+  font-size: ${fonts.size.md};
   font-weight: 700;
-  padding: ${whitespace.base.padding.sm}px;
+  padding: 0 ${whitespace.base.padding.sm}px;
   border-top: 1px solid ${colors.variable.black};
 `;
 
@@ -47,7 +47,7 @@ const Card: React.FC<CardProps> = ({ lang, path }) => {
     <Box>
       {path && (
         <>
-          <Img src={path} aria-hidden />
+          <Img src={path} alt="" />
           <Detail>
             <Data>{lang}</Data>
           </Detail>
