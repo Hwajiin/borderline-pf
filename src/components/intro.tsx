@@ -1,22 +1,38 @@
 import React from "react";
 import styled from "styled-components";
 import colors from "../base/constants/colors";
+import fonts from "../base/constants/fonts";
+import whitespace from "../base/constants/whitespace";
 import flexbox from "../base/mixins/flexbox";
-import TitleBox, { TitleBoxProps } from "../modules/titleBox";
+import { TitleBoxProps } from "../modules/titleBox";
 
 interface IntroProps extends TitleBoxProps {}
 
 const SIntro = styled.section`
   width: 100%;
   min-height: 200px;
-  ${flexbox()}
+  ${flexbox("center", "center", "column")}
   border-bottom: 1px solid ${colors.variable.black};
+  padding: ${whitespace.base.padding.sm}px;
 `;
 
-const Intro: React.FC<IntroProps> = (props, { children }) => {
+const Title = styled.h2`
+  font-size: 16px;
+`;
+
+const Subtitle = styled.p`
+  display: inline-block;
+  width: 80%;
+  text-align: center;
+  font-size: ${fonts.size.sm};
+  margin-top: 20px;
+`;
+
+const Intro: React.FC<IntroProps> = ({ title, subtitle, children }) => {
   return (
     <SIntro>
-      <TitleBox {...props} />
+      <Title>{title}</Title>
+      <Subtitle>{subtitle}</Subtitle>
       {children}
     </SIntro>
   );
