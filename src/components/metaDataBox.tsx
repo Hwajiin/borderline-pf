@@ -4,10 +4,11 @@ import responsive from "../base/constants/responsive";
 import whitespace from "../base/constants/whitespace";
 import Border from "../modules/border";
 import TitleBox from "../modules/titleBox";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPaperclip } from "@fortawesome/free-solid-svg-icons";
 import StackList from "./stackList";
 import { ProjectType } from "../data/projects";
+import fonts from "../base/constants/fonts";
+import flexbox from "../base/mixins/flexbox";
+import colors from "../base/constants/colors";
 
 interface MetaDataBoxProps {
   size: number;
@@ -27,18 +28,49 @@ const Section = styled.section<MetaDataBoxStyleProps>`
 `;
 
 const Description = styled.p`
-  margin: 30px 0;
+  margin: 40px 0;
+  font-size: ${fonts.size.md};
+  line-height: 1.5em;
 `;
 
 const LinkList = styled.ul`
   width: 100%;
   margin-top: 10px;
+
+  ${responsive.device["above-tablet"]} {
+    display: flex;
+  }
 `;
 
-const Item = styled.li``;
+const Item = styled.li`
+  &:not(:last-child) {
+    margin-bottom: 10px;
+  }
 
-const Span = styled.span`
-  margin-left: 10px;
+  ${responsive.device["above-tablet"]} {
+    &:not(:last-child) {
+      margin-bottom: 0px;
+      margin-right: 10px;
+    }
+  }
+`;
+
+const SLink = styled.a`
+  ${flexbox()}
+  font-size: ${fonts.size.md};
+  height: 48px;
+  color: ${colors.variable.white};
+  background-color: ${colors.variable.green};
+  transition: all 200ms ease-in-out;
+
+  &:active,
+  &:hover {
+    opacity: 0.8;
+  }
+
+  ${responsive.device["above-tablet"]} {
+    width: 200px;
+  }
 `;
 
 const MetaDataBox: React.FC<MetaDataBoxProps> = ({ size, projectData }) => {
@@ -58,16 +90,19 @@ const MetaDataBox: React.FC<MetaDataBoxProps> = ({ size, projectData }) => {
 
       <LinkList>
         <Item>
-          <FontAwesomeIcon icon={faPaperclip} />
-          <Span>Deployment: {projectData.deployment}</Span>
+          <SLink href={projectData.deployment} target="_blank">
+            Deployment
+          </SLink>
         </Item>
         <Item>
-          <FontAwesomeIcon icon={faPaperclip} />
-          <Span>Github: {projectData.github}</Span>
+          <SLink href={projectData.github} target="_blank">
+            Github
+          </SLink>
         </Item>
         <Item>
-          <FontAwesomeIcon icon={faPaperclip} />
-          <Span>Velog: {projectData.velog}</Span>
+          <SLink href={projectData.velog} target="_blank">
+            Velog
+          </SLink>
         </Item>
       </LinkList>
     </Section>
