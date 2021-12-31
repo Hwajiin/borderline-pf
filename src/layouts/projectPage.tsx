@@ -26,14 +26,14 @@ const Wrapper = styled.div`
 `;
 
 const ProjectPage: React.FC<ProjectPageProps> = ({ projectData }) => {
-  const IMAGE_SIZE = 40;
+  const IMAGE_SIZE = 50;
   const METADATA_SIZE = 100 - IMAGE_SIZE;
 
   return (
     <ProjectContainer>
       <Sidebar title={projectData.title} />
       <Wrapper>
-        <ImgBox />
+        <ImgBox path={projectData.img} size={IMAGE_SIZE} />
         <MetaDataBox size={METADATA_SIZE} projectData={projectData} />
       </Wrapper>
     </ProjectContainer>
