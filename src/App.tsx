@@ -1,7 +1,8 @@
-import React, { Suspense, lazy } from "react";
+import { Suspense, lazy } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Footer from "./components/footer";
 import Spinner from "./components/spinner";
+import imagePath from "./data/image_path";
+import useImage from "./hooks/useImage";
 import Navbar from "./layouts/navbar";
 import Home from "./routers/home/home";
 import Projects from "./routers/projects/projects";
@@ -19,74 +20,29 @@ const MountainLanding = lazy(
   () => import("./routers/projects/project/mountainLanding")
 );
 
-// TODO: Refactoring code...
 function App() {
+  useImage([imagePath.home.bg.sm, imagePath.home.bg.md, imagePath.home.bg.lg]);
+
   return (
     <BrowserRouter>
       <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route
-          path="aboutme"
-          element={
-            <Suspense fallback={<Spinner />}>
-              <AboutMe />
-            </Suspense>
-          }
-        />
-        <Route
-          path="skills"
-          element={
-            <Suspense fallback={<Spinner />}>
-              <Skills />
-            </Suspense>
-          }
-        />
-        <Route path="projects" element={<Projects />}>
-          <Route
-            index
-            element={
-              <Suspense fallback={<Spinner />}>
-                <Contents />
-              </Suspense>
-            }
-          />
-          <Route
-            path="my-portfolio"
-            element={
-              <Suspense fallback={<Spinner />}>
-                <MyPortfolio />
-              </Suspense>
-            }
-          />
-          <Route
-            path="covid19-info"
-            element={
-              <Suspense fallback={<Spinner />}>
-                <CovidInfo />
-              </Suspense>
-            }
-          />
-          <Route
-            path="mountain-landing"
-            element={
-              <Suspense fallback={<Spinner />}>
-                <MountainLanding />
-              </Suspense>
-            }
-          />
-          <Route path="*" element={<Contents />} />
-        </Route>
-        <Route
-          path="contact"
-          element={
-            <Suspense fallback={<Spinner />}>
-              <Contact />
-            </Suspense>
-          }
-        />
-        <Route path="*" element={<Home />} />
-      </Routes>
+      <Suspense fallback={<Spinner />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="aboutme" element={<AboutMe />} />
+          <Route path="skills" element={<Skills />} />
+          <Route path="projects" element={<Projects />}>
+            <Route index element={<Contents />} />
+            <Route path="my-portfolio" element={<MyPortfolio />} />
+            <Route path="covid19-info" element={<CovidInfo />} />
+            <Route path="mountain-landing" element={<MountainLanding />} />
+            <Route path="*" element={<Contents />} />
+          </Route>
+          <Route path="contact" element={<Contact />} />
+          <Route path="*" element={<Home />} />
+        </Routes>
+      </Suspense>
+
       {/* <Footer /> */}
     </BrowserRouter>
   );
