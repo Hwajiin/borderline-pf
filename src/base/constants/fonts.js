@@ -6,7 +6,7 @@ const fonts = {
     },
     en: {
       base: `'Open Sans', sans-serif`,
-      point: `'Playfair Display', serif`,
+      point: `'Quicksand', sans-serif`,
     },
   },
 
