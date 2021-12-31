@@ -3,10 +3,7 @@ import helmetInfo from "../../../data/helmet";
 import Main from "../../../layouts/main";
 import Stack from "../../../layouts/stack";
 import useImage from "../../../hooks/useImage";
-
-import MY_POPTFOLIO_THUMBNAIL from "../../../assets/projects/portfolio-thumbnail.png";
-import COVID19_THUMBNAIL from "../../../assets/projects/covid19-thumbnail.png";
-import MNTN_THUMBNAIL from "../../../assets/projects/mntn-thumbnail.png";
+import imagePath from "../../../data/image_path";
 
 const Contents = () => {
   const {
@@ -15,7 +12,25 @@ const Contents = () => {
     },
   } = helmetInfo;
 
-  useImage([MY_POPTFOLIO_THUMBNAIL, COVID19_THUMBNAIL, MNTN_THUMBNAIL]);
+  const {
+    projects: { covid19, mntn, portfolio },
+    home,
+  } = imagePath;
+
+  useImage([
+    covid19.sm,
+    covid19.md,
+    covid19.lg,
+    mntn.md,
+    mntn.md,
+    mntn.lg,
+    portfolio.sm,
+    portfolio.md,
+    portfolio.lg,
+    home.bg.sm,
+    home.bg.md,
+    home.bg.lg,
+  ]);
 
   return (
     <>
