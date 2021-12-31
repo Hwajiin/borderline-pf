@@ -1,5 +1,3 @@
-import projectInfo from "./projects.ts";
-
 const category = {
   base: [
     {
@@ -26,13 +24,13 @@ const category = {
   projects: [
     {
       title: "my portfolio",
-      summary: "CRA와 TypeScript를 사용하여 만든 나만의 웹 사이트",
+      summary: "CRA와 TypeScript로 제작된 나만의 포트폴리오 사이트",
       path: "/projects/my-portfolio",
       route: "my-portfolio",
     },
     {
       title: "covid19 info page",
-      summary: "코로나19 Open API를 활용하여 만든 데이터 조회 사이트",
+      summary: "Open API로 제작한 코로나19 발생 현황 안내 사이트",
       path: "/projects/covid19-info",
       route: "covid19-info",
     },
