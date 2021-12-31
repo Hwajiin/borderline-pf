@@ -9,7 +9,6 @@ export interface ColProps {
 }
 
 const SCol = styled.div<ColProps>`
-  background-color: pink;
   ${(props) =>
     props.sm ? `width: ${(props.sm / responsive.columns.sm) * 100}%;` : null}
 

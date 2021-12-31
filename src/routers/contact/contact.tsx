@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import colors from "../../base/constants/colors";
 import gridArea from "../../base/constants/grid-area";
@@ -38,7 +37,7 @@ const Contact = () => {
   const { email, github, velog, resume } = contactInfo;
 
   const {
-    contact: { title, desc, keywords, ogTitle, ogDescription, ogImage },
+    contact: { title, desc, keywords, ogTitle, ogDescription },
   } = helmetInfo;
 
   return (
@@ -50,8 +49,6 @@ const Contact = () => {
           { name: "keywords", content: keywords },
           { property: "og:title", content: ogTitle },
           { property: "og:description", content: ogDescription },
-          { property: "og:image", content: ogImage },
-          { name: "twitter:card", content: "summary" },
         ]}
       />
 

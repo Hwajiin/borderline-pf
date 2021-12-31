@@ -8,14 +8,7 @@ import ProjectPage from "../../../layouts/projectPage";
 const MountainLanding = () => {
   const {
     projects: {
-      mountainLanding: {
-        title,
-        desc,
-        keywords,
-        ogTitle,
-        ogDescription,
-        ogImage,
-      },
+      mountainLanding: { title, desc, keywords, ogTitle, ogDescription },
     },
   } = helmetInfo;
 
@@ -28,7 +21,6 @@ const MountainLanding = () => {
           { name: "keywords", content: keywords },
           { property: "og:title", content: ogTitle },
           { property: "og:description", content: ogDescription },
-          { property: "og:image", content: ogImage },
           { name: "twitter:card", content: "summary" },
         ]}
       />

@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 import fonts from "../base/constants/fonts";
-import responsive from "../base/constants/responsive";
 import flexbox from "../base/mixins/flexbox";
 import typography from "../base/mixins/typography";
 

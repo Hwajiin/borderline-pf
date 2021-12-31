@@ -8,7 +8,7 @@ import ProjectPage from "../../../layouts/projectPage";
 const CovidInfo = () => {
   const {
     projects: {
-      covidInfo: { title, desc, keywords, ogTitle, ogDescription, ogImage },
+      covidInfo: { title, desc, keywords, ogTitle, ogDescription },
     },
   } = helmetInfo;
 
@@ -21,7 +21,6 @@ const CovidInfo = () => {
           { name: "keywords", content: keywords },
           { property: "og:title", content: ogTitle },
           { property: "og:description", content: ogDescription },
-          { property: "og:image", content: ogImage },
           { name: "twitter:card", content: "summary" },
         ]}
       />
