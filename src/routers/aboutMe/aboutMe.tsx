@@ -1,4 +1,3 @@
-import React from "react";
 import { Helmet } from "react-helmet";
 import styled from "styled-components";
 import colors from "../../base/constants/colors";
@@ -6,7 +5,6 @@ import fonts from "../../base/constants/fonts";
 import responsive from "../../base/constants/responsive";
 import whitespace from "../../base/constants/whitespace";
 import Introduce from "../../components/introduce";
-import aboutmeInfo from "../../data/aboutme";
 import helmetInfo from "../../data/helmet";
 import Col from "../../layouts/grids/col";
 import Container from "../../layouts/grids/container";
@@ -15,6 +13,10 @@ import Main from "../../layouts/main";
 import Article from "../../modules/article";
 import DListItem from "../../modules/dListItem";
 import Wrapper from "../../modules/wrapper";
+import useImage from "../../hooks/useImage";
+import aboutmeInfo from "../../data/aboutme";
+
+import AVATAR from "../../assets/avatar2.jpg";
 
 const Img = styled.img`
   width: 100%;
@@ -48,14 +50,15 @@ const Border = styled.div`
 
   ${responsive.device["above-tablet"]} {
     height: 0px;
-    /* margin-bottom: 0px; */
   }
 `;
 
 const AboutMe = () => {
   const {
-    aboutMe: { title, desc, keywords, ogTitle, ogDescription, ogImage },
+    aboutMe: { title, desc, keywords, ogTitle, ogDescription },
   } = helmetInfo;
+
+  useImage([AVATAR]);
 
   return (
     <>
@@ -66,7 +69,6 @@ const AboutMe = () => {
           { name: "keywords", content: keywords },
           { property: "og:title", content: ogTitle },
           { property: "og:description", content: ogDescription },
-          { property: "og:image", content: ogImage },
           { name: "twitter:card", content: "summary" },
         ]}
       />
