@@ -5,31 +5,32 @@ import responsive from "../base/constants/responsive";
 interface ImgBoxProps {
   height?: number;
   size?: number;
-  path?: string;
+  path?: string | string[];
   alt?: string;
 }
 
-type ImgBoxStyleProps = Pick<ImgBoxProps, "size" | "height">;
+type ImgBoxStyleProps = Pick<ImgBoxProps, "size" | "height" | "path">;
 
-const Img = styled.img<ImgBoxStyleProps>`
+const Image = styled.div<ImgBoxStyleProps>`
   width: 100%;
   height: ${({ height }) => height}px;
-  object-fit: contain;
   background-color: pink;
+  background: center/cover url(${({ path }) => (path ? `${path[0]}` : "")});
+
+  ${responsive.device["above-tablet"]} {
+    height: 500px;
+    background: center/cover url(${({ path }) => (path ? `${path[1]}` : "")});
+  }
 
   ${responsive.device["above-desktop"]} {
     width: ${({ size }) => size}%;
     height: 100%;
+    background: center/cover url(${({ path }) => (path ? `${path[1]}` : "")});
   }
 `;
 
-const ImgBox: React.FC<ImgBoxProps> = ({
-  height = 400,
-  size = 40,
-  path,
-  alt,
-}) => {
-  return <Img height={height} size={size} src={path} alt={alt} />;
+const ImgBox: React.FC<ImgBoxProps> = ({ height = 300, size = 40, path }) => {
+  return <Image height={height} size={size} path={path}></Image>;
 };
 
 export default ImgBox;
