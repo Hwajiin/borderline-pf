@@ -90,7 +90,7 @@ const HomePage = () => {
         <Wrapper>
           <Box>
             <SLink to="/projects">프로젝트 보기</SLink>
-            <Strong>욕심 많은</Strong>
+            <Strong>욕심많은</Strong>
             <P>개발자의</P>
             <P>포트폴리오</P>
           </Box>
