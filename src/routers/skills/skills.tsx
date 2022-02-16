@@ -16,6 +16,11 @@ import TYPESCRIPT_LOGO from "../../assets/logo/typescript.png";
 
 const Skills = () => {
   useImage([HTML_LOGO, REACT_LOGO, SASS_LOGO, TYPESCRIPT_LOGO]);
+
+  const {
+    skills: { title, desc, keywords, ogTitle, ogDescription },
+  } = helmetInfo;
+
   const { stack } = skillsInfo;
 
   const {
@@ -26,10 +31,6 @@ const Skills = () => {
 
   const introSubtitle =
     "React와 TypeScript를 주로 사용하고 있으며, next.js를 학습하고 있습니다.";
-
-  const {
-    skills: { title, desc, keywords, ogTitle, ogDescription },
-  } = helmetInfo;
 
   return (
     <>
@@ -52,7 +53,7 @@ const Skills = () => {
         >
           {stack.map((item, index) => (
             <GridArea key={index} areaName={item.name}>
-              <Card path={item.img} lang={item.lang} />
+              <Card url={item.img} lang={item.lang} />
             </GridArea>
           ))}
         </GridTemplate>

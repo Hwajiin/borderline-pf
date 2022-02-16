@@ -7,8 +7,8 @@ import whitespace from "../base/constants/whitespace";
 import flexbox from "../base/mixins/flexbox";
 
 interface CardProps {
-  lang?: string;
-  path?: string | null;
+  lang: string;
+  url: string | null;
 }
 
 const Box = styled.div`
@@ -42,12 +42,12 @@ const Data = styled.p`
   border-top: 1px solid ${colors.variable.black};
 `;
 
-const Card: React.FC<CardProps> = ({ lang, path }) => {
+const Card: React.FC<CardProps> = ({ lang, url }) => {
   return (
     <Box>
-      {path && (
+      {url && (
         <>
-          <Img src={path} alt="" />
+          <Img src={url} alt={lang} />
           <Detail>
             <Data>{lang}</Data>
           </Detail>
