@@ -22,7 +22,6 @@ const SMain = styled.main`
 
 const Header = styled.header`
   ${flexbox()}
-  top: ${global.navHeight}px;
   height: ${global.headerHeight}px;
   padding: 0 ${whitespace.base.padding.sm}px;
   background-color: ${colors.variable.white};
