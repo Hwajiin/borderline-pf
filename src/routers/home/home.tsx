@@ -68,7 +68,7 @@ const SLink = styled(Link)`
   }
 `;
 
-const Home = () => {
+const HomePage = () => {
   const {
     home: { title, desc, keywords, ogTitle, ogDescription },
   } = helmetInfo;
@@ -100,4 +100,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;
