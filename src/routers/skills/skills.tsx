@@ -1,7 +1,7 @@
 import { Helmet } from "react-helmet";
 import gridArea from "../../base/constants/grid-area";
 import Card from "../../components/card";
-import Intro from "../../components/intro";
+import IntroSection from "../../components/introSection";
 import helmetInfo from "../../data/helmet";
 import skillsInfo from "../../data/skills";
 import useImage from "../../hooks/useImage";
@@ -15,6 +15,7 @@ import SASS_LOGO from "../../assets/logo/sass.png";
 import TYPESCRIPT_LOGO from "../../assets/logo/typescript.png";
 
 const Skills = () => {
+  useImage([HTML_LOGO, REACT_LOGO, SASS_LOGO, TYPESCRIPT_LOGO]);
   const { stack } = skillsInfo;
 
   const {
@@ -30,8 +31,6 @@ const Skills = () => {
     skills: { title, desc, keywords, ogTitle, ogDescription },
   } = helmetInfo;
 
-  useImage([HTML_LOGO, REACT_LOGO, SASS_LOGO, TYPESCRIPT_LOGO]);
-
   return (
     <>
       <Helmet
@@ -45,7 +44,7 @@ const Skills = () => {
       />
 
       <Main title="skills">
-        <Intro title={introTitle} subtitle={introSubtitle} />
+        <IntroSection title={introTitle} subtitle={introSubtitle} />
         <GridTemplate
           smTemplateStyle={sm.template}
           lgTemplateStyle={lg.template}

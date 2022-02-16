@@ -8,7 +8,7 @@ import { TitleBoxProps } from "../modules/titleBox";
 
 interface IntroProps extends TitleBoxProps {}
 
-const SIntro = styled.section`
+const SIntroSection = styled.section`
   width: 100%;
   min-height: 200px;
   ${flexbox("center", "center", "column")}
@@ -28,14 +28,14 @@ const Subtitle = styled.p`
   margin-top: 20px;
 `;
 
-const Intro: React.FC<IntroProps> = ({ title, subtitle, children }) => {
+const IntroSection: React.FC<IntroProps> = ({ title, subtitle, children }) => {
   return (
-    <SIntro>
+    <SIntroSection>
       <Title>{title}</Title>
       <Subtitle>{subtitle}</Subtitle>
       {children}
-    </SIntro>
+    </SIntroSection>
   );
 };
 
-export default Intro;
+export default IntroSection;
