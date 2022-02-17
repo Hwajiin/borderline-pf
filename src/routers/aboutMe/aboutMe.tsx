@@ -13,15 +13,18 @@ import Main from "../../layouts/main";
 import Article from "../../modules/article";
 import DListItem from "../../modules/dListItem";
 import Wrapper from "../../modules/wrapper";
-import useImage from "../../hooks/useImage";
 import aboutmeInfo from "../../data/aboutme";
 
-import AVATAR from "../../assets/avatar2.jpg";
+const ImgWrapper = styled.div`
+  width: 100%;
+  height: 450px;
+`;
 
 const Img = styled.img`
   width: 100%;
-  display: flex;
-  object-fit: contain;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
 `;
 
 const Section = styled.section`
@@ -58,8 +61,6 @@ const AboutMe = () => {
     aboutMe: { title, desc, keywords, ogTitle, ogDescription },
   } = helmetInfo;
 
-  useImage([AVATAR]);
-
   return (
     <>
       <Helmet
@@ -78,7 +79,13 @@ const AboutMe = () => {
           <Container>
             <Row>
               <Col sm={4} md={5} lg={4}>
-                <Img src={aboutmeInfo.avatar[1]} alt="profile" />
+                <ImgWrapper>
+                  <Img
+                    src={aboutmeInfo.avatar[1]}
+                    alt="profile"
+                    crossOrigin="anonymous"
+                  />
+                </ImgWrapper>
               </Col>
 
               <Col sm={4} md={7} lg={8}>
@@ -89,7 +96,9 @@ const AboutMe = () => {
                 </Wrapper>
               </Col>
             </Row>
+
             <Border />
+
             <Row>
               <Col sm={4} md={6}>
                 <Wrapper padding={whitespace.base.padding.lg}>
