@@ -1,14 +1,18 @@
-import React from "react";
 import { Helmet } from "react-helmet";
+import { useLocation } from "react-router-dom";
 import helmetInfo from "../../../data/helmet";
 import projectInfo from "../../../data/projects";
 import Main from "../../../layouts/main";
 import ProjectPage from "../../../layouts/projectPage";
 
-const MountainLanding = () => {
+const Project = () => {
+  const location = useLocation();
+  const path = location.pathname.split("/projects/")[1];
   const {
     projects: {
-      mountainLanding: { title, desc, keywords, ogTitle, ogDescription },
+      project: {
+        [`${path}`]: { title, desc, keywords, ogTitle, ogDescription },
+      },
     },
   } = helmetInfo;
 
@@ -27,11 +31,11 @@ const MountainLanding = () => {
 
       <Main isHeader={false}>
         <ProjectPage
-          projectData={projectInfo.projects["mountain-landing"]}
+          projectData={projectInfo.projects[`${path}`]}
         ></ProjectPage>
       </Main>
     </>
   );
 };
 
-export default MountainLanding;
+export default Project;
