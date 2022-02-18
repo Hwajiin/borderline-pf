@@ -1,4 +1,26 @@
-const helmetInfo = {
+type Data = {
+  title: string;
+  desc: string;
+  keywords: string;
+  ogTitle: string;
+  ogDescription: string;
+  ogImage: string | null;
+};
+
+interface HelmetInfoType {
+  home: Data;
+  aboutMe: Data;
+  skills: Data;
+  contact: Data;
+  projects: {
+    contents: Data;
+    project: {
+      [key: string]: Data;
+    };
+  };
+}
+
+const helmetInfo: HelmetInfoType = {
   home: {
     title: "Home | 화지인의 프론트엔드 포트폴리오",
     desc: "욕심 많은 프론트엔드 개발자 화지인의 포트폴리오 웹사이트입니다. 도전하는 것을 두려워하지 않고, 새로운 것을 배우는 것을 좋아합니다.",
@@ -42,33 +64,36 @@ const helmetInfo = {
       ogImage: "",
     },
 
-    myPortolio: {
-      title: "My Portfolio | Projects",
-      desc: "신입 프론트엔드 개발자로서 처음 선보이는 포트폴리오 웹 사이트입니다. CRA와 TypeScript를 기반으로 제작된 SPA입니다.",
-      keywords: "CRA, TypeScript, styled-components, React, fronend, portfolio",
-      ogTitle: "My Portfolio | Projects",
-      ogDescription:
-        "신입 프론트엔드 개발자로서 처음 선보이는 포트폴리오 웹 사이트입니다. CRA와 TypeScript를 기반으로 제작된 SPA입니다.",
-      ogImage: "",
-    },
+    project: {
+      "my-portfolio": {
+        title: "My Portfolio | Projects",
+        desc: "신입 프론트엔드 개발자로서 처음 선보이는 포트폴리오 웹 사이트입니다. CRA와 TypeScript를 기반으로 제작된 SPA입니다.",
+        keywords:
+          "CRA, TypeScript, styled-components, React, fronend, portfolio",
+        ogTitle: "My Portfolio | Projects",
+        ogDescription:
+          "신입 프론트엔드 개발자로서 처음 선보이는 포트폴리오 웹 사이트입니다. CRA와 TypeScript를 기반으로 제작된 SPA입니다.",
+        ogImage: "",
+      },
 
-    covidInfo: {
-      title: "Covid19 info page | Projects",
-      desc: "",
-      keywords: "openAPI, CRA, TypeScript, React, fronend, portfolio",
-      ogTitle: "Covid19 info page | Projects",
-      ogDescription: "",
-      ogImage: "",
-    },
+      "covid19-info": {
+        title: "Covid19 info page | Projects",
+        desc: "",
+        keywords: "openAPI, CRA, TypeScript, React, fronend, portfolio",
+        ogTitle: "Covid19 info page | Projects",
+        ogDescription: "",
+        ogImage: "",
+      },
 
-    mountainLanding: {
-      title: "Mountain Landing Page | Projects",
-      desc: "SCSS와 webpack을 학습하며 제작한 반응형 랜딩 페이지입니다. lighthouse의 평가항목인 접근성, 사용성 및 SEO를 고려하여 마크업하였습니다.",
-      keywords: "SCSS, webpack, SEO, accesibility, fronend, portfolio",
-      ogTitle: "Mountain Landing Page | Projects",
-      ogDescription:
-        "SCSS와 webpack을 학습하며 제작한 반응형 랜딩 페이지입니다.",
-      ogImage: "",
+      "mountain-landing": {
+        title: "Mountain Landing Page | Projects",
+        desc: "SCSS와 webpack을 학습하며 제작한 반응형 랜딩 페이지입니다. lighthouse의 평가항목인 접근성, 사용성 및 SEO를 고려하여 마크업하였습니다.",
+        keywords: "SCSS, webpack, SEO, accesibility, fronend, portfolio",
+        ogTitle: "Mountain Landing Page | Projects",
+        ogDescription:
+          "SCSS와 webpack을 학습하며 제작한 반응형 랜딩 페이지입니다.",
+        ogImage: "",
+      },
     },
   },
 
