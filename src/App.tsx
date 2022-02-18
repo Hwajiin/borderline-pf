@@ -14,11 +14,8 @@ const lazyLoading = (path: string) => {
 const AboutMePage = lazyLoading("aboutMe/aboutMe");
 const SkillsPage = lazyLoading("skills/skills");
 const ContactPage = lazyLoading("contact/contact");
-
 const ProjectsContentsPage = lazyLoading("projects/project/contents");
-const MyPortfolioPage = lazyLoading("projects/project/myPortfolio");
-const CovidInfoPage = lazyLoading("projects/project/covidInfo");
-const MountainLandingPage = lazyLoading("projects/project/mountainLanding");
+const ProjectPage = lazyLoading("projects/project/project");
 
 function App() {
   useImage([imagePath.home.bg.sm, imagePath.home.bg.md, imagePath.home.bg.lg]);
@@ -31,11 +28,9 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="aboutme" element={<AboutMePage />} />
           <Route path="skills" element={<SkillsPage />} />
-          <Route path="projects" element={<Projects />}>
+          <Route path="projects/*" element={<Projects />}>
             <Route index element={<ProjectsContentsPage />} />
-            <Route path="my-portfolio" element={<MyPortfolioPage />} />
-            <Route path="covid19-info" element={<CovidInfoPage />} />
-            <Route path="mountain-landing" element={<MountainLandingPage />} />
+            <Route path=":id" element={<ProjectPage />} />
             <Route path="*" element={<ProjectsContentsPage />} />
           </Route>
           <Route path="contact" element={<ContactPage />} />
