@@ -31,14 +31,14 @@ const LinkWrapper = styled.a`
 
 const Contact = () => {
   const {
+    contact: { title, desc, keywords, ogTitle, ogDescription },
+  } = helmetInfo;
+
+  const {
     contact: { lg, sm },
   } = gridArea;
 
-  const { email, github, velog, resume } = contactInfo;
-
-  const {
-    contact: { title, desc, keywords, ogTitle, ogDescription },
-  } = helmetInfo;
+  const { means } = contactInfo;
 
   return (
     <>
@@ -58,31 +58,25 @@ const Contact = () => {
           lgTemplateStyle={lg.template}
           lgColumns={lg.columns}
         >
-          <GridArea areaName="email">
-            <TitleBox title="email" subtitle={email.summary} />
-            <ALink
-              name="메일 보내기"
-              path={`mailto:${contactInfo.email.path}`}
-            />
-          </GridArea>
+          {Object.keys(means).map((key) => (
+            <GridArea areaName={key} key={key}>
+              {key !== "email" && (
+                <LinkWrapper href={means[key].path} target="_blank">
+                  <TitleBox title={key} subtitle={means[key].summary} />
+                </LinkWrapper>
+              )}
 
-          <GridArea areaName="github">
-            <LinkWrapper href={github.path} target="_blank">
-              <TitleBox title="github" subtitle={github.summary} />
-            </LinkWrapper>
-          </GridArea>
-
-          <GridArea areaName="velog">
-            <LinkWrapper href={velog.path} target="_blank">
-              <TitleBox title="velog" subtitle={velog.summary} />
-            </LinkWrapper>
-          </GridArea>
-
-          <GridArea areaName="resume">
-            <LinkWrapper href={resume.path} target="_blank">
-              <TitleBox title="resume" subtitle={resume.summary} />
-            </LinkWrapper>
-          </GridArea>
+              {key === "email" && (
+                <>
+                  <TitleBox title={key} subtitle={means[key].summary} />
+                  <ALink
+                    name="메일 보내기"
+                    path={`mailto:${means[key].path}`}
+                  />
+                </>
+              )}
+            </GridArea>
+          ))}
         </GridTemplate>
       </Main>
     </>
