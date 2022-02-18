@@ -13,7 +13,15 @@ export type ProjectType = {
   velog: string;
 };
 
-const projectInfo = {
+type ProjectInfoType = {
+  title: string;
+  subtitle: string;
+  projects: {
+    [key: string]: ProjectType;
+  };
+};
+
+const projectInfo: ProjectInfoType = {
   title: "",
   subtitle: "",
   projects: {
